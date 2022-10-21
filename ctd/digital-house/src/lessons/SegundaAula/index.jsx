@@ -1,8 +1,9 @@
-import './style'
+import styles from './style.scss';
+
 export function SegundaAula (){
     return (
-        <main>
-            <h1>Segunda Aula</h1>
+        <main className='segunda-aula-main'>
+            <h1 className={styles.segundaAulaMain}>Segunda Aula</h1>
             <h2>Projeto Escolhido: Netflix</h2>
             <ul>
                 <li>
