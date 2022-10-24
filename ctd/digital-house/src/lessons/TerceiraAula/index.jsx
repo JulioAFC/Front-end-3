@@ -1,13 +1,13 @@
 import './style.scss'
-import montanha from './../../assets/images/montanha'
+import montanha from './../../assets/images/montanha.jpg'
 
 export function TerceiraAula(){
     
     
     const components = [
-        {name: 'Component Card', description: 'teste', image: 'https://wallpaperaccess.com/full/370378.jpg'}
-        {name: '', description: 'teste', image: ''}
-        {name: '', description: 'teste', image: ''}
+        {name: 'Component Card', description: 'teste', image: 'montanha'},
+        {name: '', description: 'teste', image: ''},
+        {name: '', description: 'teste', image: ''},
         {name: '', description: 'teste', image: ''}
     ]
     
