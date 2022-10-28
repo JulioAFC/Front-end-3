@@ -29,7 +29,7 @@ export function QuartaAula(){
                     componentsFinded.map(
                         component => {
                             return(
-                                <li>
+                                <li key = {component.id}>
                                     <img src={component.image}  alt="" />
                                     <h1>{component.title}</h1>
                                     <p>{component.text}</p>
