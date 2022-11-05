@@ -6,7 +6,7 @@ export function SetimaAula (){
     //let contador = 0
     const [contador, setContador] = useState(0)
     
-    const[temaEscuro, setTemaEscuro] = useState(false)
+    const[temaEscuro, setTemaEscuro] = useState(true)
 
     function somarNumero(){
 
@@ -23,8 +23,8 @@ export function SetimaAula (){
             
             <h1>Contador</h1>
             
-            <button onClick="mudarTema">Mudar Tema</button>
-            <button onClick="somarNumero">Adicionar</button>
+            <button onClick={mudarTema}>Mudar Tema</button>
+            <button onClick={somarNumero}>Adicionar</button>
             <span>Número atual: {contador}</span>
 
         </main>
