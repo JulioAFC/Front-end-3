@@ -8,10 +8,43 @@ export function DecimaQuintaAula() {
     const [cep, setCep] = useState('')
 
     function searchCep(cepRecieved) {
-
+        
         setCep(cepRecieved)
 
+        if(cepRecieved.lenght === 8){
+            //requisição da API ViaCep
+            fetch('https://viacep.com.br/ws/${cepReceived}/json/').then(
+                response => {
+                    response.json().then(
+                        address => {
+
+
+                            if(address.erro !== undefined){
+
+                                //Deu erro
+
+                            }
+                            else{
+
+                                //Deu Sucesso
+                                setLocations([...locations, address])
+                                
+                            }
+                            
+                        }
+                    )
+            }   )
+        }   
+        
     }
+
+
+    function deleteLocation(){
+
+        console.log("O registro foi deletado")
+
+    }
+
 
     return(
 
@@ -38,14 +71,15 @@ export function DecimaQuintaAula() {
 
                 {
                     locations.map(
-                        (location, index) => {
-                            return (
-                                <DecimaQuintaAulaItem
-                                    key={index}
-                                    data={location}
-                                />
-                            )
-                        }
+                        (location, index) => ( //posso retirar as chaves, que conseguimos eliminar o return
+                        
+                            <DecimaQuintaAulaItem
+                                key={index}
+                                data={location}
+                                onDeleteLocation={currentLocation => deleteLocation(location)}
+                            />
+                        )
+                        
                     )
                 }
 
