@@ -85,6 +85,11 @@ export function DecimaQuintaAula() {
 
             </section>
 
+            <link to="/decima-quarta-aula">
+                <button>Aula Anterior</button>
+
+            </link>
+
         </div>
 
     )
