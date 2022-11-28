@@ -1,14 +1,15 @@
 import './style.scss'
 import montanha from './../../assets/images/montanha.jpg'
+import { Link } from 'react-router-dom'
 
 export function TerceiraAula(){
     
     
     const components = [
         {name: 'Component Card', description: 'teste', image: 'montanha'},
+        /* {name: '', description: 'teste', image: ''},
         {name: '', description: 'teste', image: ''},
-        {name: '', description: 'teste', image: ''},
-        {name: '', description: 'teste', image: ''}
+        {name: '', description: 'teste', image: ''} */
     ]
     
     return (
@@ -26,6 +27,13 @@ export function TerceiraAula(){
                     ))
                 }
             </ul>
-        </div>
+        </div>/* ,
+
+        <ul>
+            <Link to="quarta-aula">
+                <button>Aula Posterior</button>
+
+            </Link>
+        </ul> */
     )
 }

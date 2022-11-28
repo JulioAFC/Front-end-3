@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import './style.scss'
 //Estruturando as rotas para a página principal
 export function MainLayout(){
@@ -9,14 +9,41 @@ export function MainLayout(){
                 <h1>Layout Principal</h1>
 
                 <ul>
-
                     <li>
-
-                        <link to="decima-quarta-aula">Decima Quarta Aula</link>
+                        
+                        <Link to="segunda-aula">Segunda Aula</Link>
+                    </li>
+                    <li>
+                        
+                        <Link to="terceira-aula">Terceira Aula</Link>
+                    </li>
+                    <li>
+                        
+                        <Link to="quarta-aula">Quarta Aula</Link>
+                    </li>
+                    <li>
+                        
+                        <Link to="quinta-aula">Quinta Aula</Link>
+                    </li>
+                    <li>
+                        
+                        <Link to="setima-aula">Setima Aula</Link>
+                    </li>
+                    <li>
+                        
+                        <Link to="oitava-aula">Oitava Aula</Link>
+                    </li>
+                    <li>
+                        
+                        <Link to="decima-terceira-aula">Decima Terceira Aula</Link>
+                    </li>
+                    <li>
+                        
+                        <Link to="decima-quarta-aula">Decima Quarta Aula</Link>
                     </li>
                     
                     <li>
-                        <link to="decima-quinta-aula">Decima Quinta Aula</link>
+                        <Link to="decima-quinta-aula">Decima Quinta Aula</Link>
 
                     </li>
                 </ul>
@@ -29,6 +56,9 @@ export function MainLayout(){
                 <Outlet /> {/* Vai fazer carregar os elementos presentes na rota */}
                  
             </main>
+
+            
+
         </div>
     )
 }

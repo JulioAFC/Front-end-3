@@ -1,6 +1,9 @@
+import { Link } from 'react-router-dom'
 import './style.scss'
 
 export function SegundaAula(){
+
+    
     return (
         <main>
             <h1>Segunda Aula</h1>
@@ -30,7 +33,14 @@ export function SegundaAula(){
                     <p>Footer</p>
                 </li>
             </ul>
-        </main>
+        </main>/* ,
+
+        <ul>
+            <Link to="terceira-aula">
+                <button>Aula Posterior</button>
+
+            </Link>
+        </ul> */
 
     )
 }

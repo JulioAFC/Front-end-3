@@ -2,9 +2,10 @@ import './style.scss'
 import youtubeImage from './../../assets/images/youtube-home.png'
 import batataGif from './../../assets/images/batata.gif'
 import { QuintaAulaItem } from '../../components/QuintaAulaItem'
+import { Link } from 'react-router-dom'
 
 export function QuintaAula(){
-
+    
     const componentsFinded = [
         {
             id: 1,
@@ -51,7 +52,14 @@ export function QuintaAula(){
 
             </ul>
 
-        </div>
+        </div>/* ,
+
+        <ul>
+            <Link to="setima-aula">
+                <button>Aula Posterior</button>
+
+            </Link>
+        </ul> */
     )
 
 }

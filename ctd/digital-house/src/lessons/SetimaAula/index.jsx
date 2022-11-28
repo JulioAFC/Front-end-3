@@ -1,8 +1,9 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './style.scss'
 
 export function SetimaAula (){
-
+    
     //let contador = 0
     const [contador, setContador] = useState(0)
     
@@ -27,6 +28,14 @@ export function SetimaAula (){
             <button onClick={somarNumero}>Adicionar</button>
             <span>Número atual: {contador}</span>
 
-        </main>
+        </main>/* ,
+
+        <ul>
+            <Link to="oitava-aula">
+                <button>Aula Posterior</button>
+
+            </Link>
+        </ul> */
+
     )
 }

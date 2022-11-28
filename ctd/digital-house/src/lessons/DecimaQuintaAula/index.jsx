@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
 import { DecimaQuintaAulaItem } from '../../components/DecimaQuintaAulaItem'
 import './style.scss'
 
@@ -6,6 +7,8 @@ export function DecimaQuintaAula() {
 
     const [locations, setLocations] = useState([])
     const [cep, setCep] = useState('')
+
+    const { id } = useParams()
 
     function searchCep(cepRecieved) {
         
@@ -85,10 +88,10 @@ export function DecimaQuintaAula() {
 
             </section>
 
-            <link to="/decima-quarta-aula">
+            <Link to="decima-quarta-aula">
                 <button>Aula Anterior</button>
 
-            </link>
+            </Link>
 
         </div>
 

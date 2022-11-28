@@ -1,8 +1,10 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import { DecimaQuartaAulaItem } from "../../components/DecimaQuartaAulaItem"
 
 export function DecimaQuartaAula() {
 
+    
     const registers = [
         { id: 1, title: 'Primeiro registro' }
     ]
@@ -52,7 +54,14 @@ export function DecimaQuartaAula() {
 
             }
 
-        </>
+        </>/* ,
+
+        <ul>
+            <Link to="decima-quinta-aula">
+                <button>Aula Posterior</button>
+
+            </Link>
+        </ul> */
     )
 
 }

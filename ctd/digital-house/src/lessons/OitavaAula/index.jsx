@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import './style.scss'
 import { OitavaAulaCardProduto } from "../../components/OitavaAulaCardProduto"
+import { Link } from 'react-router-dom'
 
 export function OitavaAula() {
 
+    
     const [allProducts, setAllProducts] = useState([
         {
             id: 1,
@@ -60,7 +62,14 @@ export function OitavaAula() {
                 }
             </section>
 
-        </main>
+        </main>/* ,
+
+        <ul>
+            <Link to="decima-terceira-aula">
+                <button>Aula Posterior</button>
+
+            </Link>
+        </ul> */
 
     )
 
