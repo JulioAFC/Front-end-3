@@ -1,10 +1,16 @@
 import { Link, Outlet } from 'react-router-dom'
+import { useTheme } from '../../hooks/useTheme'
 import './style.scss'
+
+
 //Estruturando as rotas para a página principal
 export function MainLayout(){
-    
+
+    //Importação do Tema utilizando o Hook customizado "useTheme"
+    const { theme } = useTheme()
+
     return(
-        <div className="main-layout-component">
+        <div className={`main-layout-component ${theme}`}>
             <header className="main-layout-component-header">
                 <h1>Layout Principal</h1>
 

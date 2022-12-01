@@ -15,6 +15,7 @@ import { SetimaAula } from './lessons/SetimaAula'
 import { TerceiraAula } from './lessons/TerceiraAula'
 import { DHGames } from './pages/DHGames'
 import {Login} from './pages/Login'
+import { ThemeProvider } from "./hooks/useTheme"
 
 
 function App() {
@@ -66,8 +67,9 @@ function App() {
   ])
   
   return (
-    <RouterProvider router={appRouter} />
-
+    <ThemeProvider>
+      <RouterProvider router={appRouter} />
+    </ThemeProvider>
   )
 }
 
