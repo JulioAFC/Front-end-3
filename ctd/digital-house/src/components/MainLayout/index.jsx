@@ -13,7 +13,11 @@ export function MainLayout(){
         <div className={`main-layout-component ${theme}`}>
             <header className="main-layout-component-header">
                 <h1>Layout Principal</h1>
+            </header>
+            <aside className='main-layout-component-aside'>
 
+            <section>
+                <h1>Aulas</h1>
                 <ul>
                     <li>
                         
@@ -53,18 +57,24 @@ export function MainLayout(){
 
                     </li>
                 </ul>
-            </header>
+            </section>
 
-            <main className="main-layout-component-main">
+            <section>
+                <h1>Telas</h1>
+                    <ul>
+                        <li>
+                            <Link to="to-do">To Do</Link>
+                        </li>
+                        <li>
+                            <Link to="configurations">Configurações</Link>
+                        </li>
+                    </ul>
+            </section>
 
-                <p>O conteúdo será carregado aqui dentro:</p>
-                
-                <Outlet /> {/* Vai fazer carregar os elementos presentes na rota */}
-                 
+            </aside>
+            <main className='main-layout-component-main'>
+                <Outlet />
             </main>
-
-            
-
         </div>
     )
 }

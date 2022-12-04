@@ -1,6 +1,10 @@
+import { useEffect } from 'react'
 import { useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+
 import { DecimaQuintaAulaItem } from '../../components/DecimaQuintaAulaItem'
+import { useTheme } from '../../hooks/useTheme'
+
 import './style.scss'
 
 export function DecimaQuintaAula() {
@@ -8,65 +12,75 @@ export function DecimaQuintaAula() {
     const [locations, setLocations] = useState([])
     const [cep, setCep] = useState('')
 
-    const { id } = useParams()
+    const { theme } = useTheme()
+
+    // const { id } = useParams()
+
+    useEffect(() => {
+
+        // request baseada no Id
+
+    }, [])
 
     function searchCep(cepRecieved) {
-        
+
         setCep(cepRecieved)
 
-        if(cepRecieved.lenght === 8){
-            //requisição da API ViaCep
-            fetch('https://viacep.com.br/ws/${cepReceived}/json/').then(
+        if(cepRecieved.length === 8) {
+
+            fetch(`https://viacep.com.br/ws/${cepRecieved}/json/`).then(
                 response => {
                     response.json().then(
                         address => {
 
+                            if(address.erro !== undefined) {
 
-                            if(address.erro !== undefined){
+                                // Deu erro
 
-                                //Deu erro
+                            } else {
 
-                            }
-                            else{
-
-                                //Deu Sucesso
+                                // Deu Sucesso
                                 setLocations([...locations, address])
-                                
+
                             }
-                            
                         }
                     )
-            }   )
-        }   
-        
-    }
+                }
+            )
 
-
-    function deleteLocation(){
-
-        console.log("O registro foi deletado")
+        }
 
     }
 
+
+
+    function deleteLocation(currentLocation) {
+
+        console.log(currentLocation)
+
+    }
 
     return(
 
-        <div className="decima-quarta-aula-component">
+        <div className={`decima-quarta-aula-component ${theme}`}>
 
             <form>
 
                 <h1>Cadastrar endereços</h1>
 
                 <div>
-                    <label htmlFor="">Cep</label>
+                    <label>Cep</label>
                     <input
                         type="number"
                         value={cep}
+                        aria-label="cep"
                         onChange={event => searchCep(event.target.value)}
                     />
                 </div>
 
-                <button>Cadastrar</button>
+                <button
+                    aria-label="submit-button"
+                >Cadastrar</button>
 
             </form>
 
@@ -74,24 +88,17 @@ export function DecimaQuintaAula() {
 
                 {
                     locations.map(
-                        (location, index) => ( //posso retirar as chaves, que conseguimos eliminar o return
-                        
+                        (location, index) => (
                             <DecimaQuintaAulaItem
                                 key={index}
                                 data={location}
-                                onDeleteLocation={currentLocation => deleteLocation(location)}
+                                onDeleteLocation={currentLocation => deleteLocation(currentLocation)}
                             />
                         )
-                        
                     )
                 }
 
             </section>
-
-            <Link to="decima-quarta-aula">
-                <button>Aula Anterior</button>
-
-            </Link>
 
         </div>
 

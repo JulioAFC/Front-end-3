@@ -15,8 +15,13 @@ import { SetimaAula } from './lessons/SetimaAula'
 import { TerceiraAula } from './lessons/TerceiraAula'
 import { DHGames } from './pages/DHGames'
 import {Login} from './pages/Login'
-import { ThemeProvider } from "./hooks/useTheme"
+import { ToDo } from "./pages/ToDo"
 
+
+
+import { ThemeProvider } from "./hooks/useTheme"
+import { Configurations} from "./pages/Configurations"
+import { LanguageProvider} from "./hooks/useLangage"
 
 function App() {
   
@@ -60,6 +65,14 @@ function App() {
         {
           path: 'decima-quinta-aula',
           element: <DecimaQuintaAula />,
+        },
+        {
+          path: 'configurations',
+          element: <Configurations />
+        },
+        {
+          path: 'to-do',
+          element: <ToDo />
         }
       ]
     }
@@ -68,9 +81,12 @@ function App() {
   
   return (
     <ThemeProvider>
-      <RouterProvider router={appRouter} />
+      <LanguageProvider>
+        <RouterProvider router={appRouter} />
+      </LanguageProvider>
     </ThemeProvider>
   )
+
 }
 
 export default App
