@@ -7,8 +7,9 @@ const ThemeContext = createContext()
 //Criação do Provedor para o Contexto
 export function ThemeProvider(props){
 
+    const themeLocalStorage = localStorage.getItem('theme')
     //State que irá controlar qual Tema a aplicação está usando
-    const [theme, setTheme] = useState('dark')
+    const [theme, setTheme] = useState(themeLocalStorage === null ? 'dark' : themeLocalStorage)
 
     //Função resopnsável por Trocar o Tema
     function changeTheme(themeReceived){
@@ -16,6 +17,7 @@ export function ThemeProvider(props){
         if(themeReceived !== theme){
             
             setTheme(themeReceived)
+            localStorage.setItem('theme',themeReceived)
         }
     }
 
